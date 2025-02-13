@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 const morseCodeMap = {
   A: ".-", B: "-...", C: "-.-.", D: "-..", E: ".", F: "..-.",
@@ -35,17 +33,18 @@ export default function MorseCodeGame() {
       <h1 className="text-xl font-bold">Morse Code Trainer</h1>
       <p className="text-lg mt-4">Translate this letter into Morse code:</p>
       <div className="text-4xl font-bold mt-2">{letter}</div>
-      <Input
+      <input
         className="mt-4 p-2 border rounded"
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Enter Morse Code (e.g., .- for A)"
       />
-      <Button className="mt-2 p-2 bg-blue-500 text-white rounded" onClick={checkAnswer}>
+      <button className="mt-2 p-2 bg-blue-500 text-white rounded" onClick={checkAnswer}>
         Submit
-      </Button>
+      </button>
       {message && <p className="mt-4 text-lg">{message}</p>}
     </div>
   );
 }
+
